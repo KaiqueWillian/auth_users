@@ -1,10 +1,10 @@
 import React from "react";
-import Login from "./components/Login";
+import Form from "./components/form/Form";
 
 function App() {
   return (
-    <div className="h-screen bg-black flex items-center justify-center">
-      <Login />
+    <div className="h-screen  flex items-center justify-center">
+      <Form />
     </div>
   );
 }
