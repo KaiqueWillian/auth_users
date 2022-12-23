@@ -20,26 +20,27 @@ function ListUsers() {
         {users.length} Registered
         {setUsers.length === 2 ? " users" : " user"}
       </p>
+
       <div className="w-[375px] m-auto">
         {users.map((user) => (
           <div
             className="border rounded-lg mb-8 border-[#00e640] py-4 px-4"
             key={user.id}
           >
-            <div className="flex flex-col justify-center gap-2">
-              <img
-                src={user.avatar}
-                alt="avatar"
-                className="w-[66px] h-[66px] rounded-full bg-white border-[#00e640] border"
-              />
-
-              <div className="flex flex-col items-center text-white">
-                <p>Name:</p>
-                <span>{user.name}</span>
-                <p>Created at:</p>
-                <span>{format(parseISO(user.createdAt), "dd/MM/yyyy")}</span>
+            <div className="flex flex-row items-center justify-between">
+              <div>
+                <img
+                  src={user.avatar}
+                  alt="avatar"
+                  className="w-[66px] h-[66px] rounded-full bg-white border-[#00e640] border"
+                />
               </div>
-
+              <div>
+                <div className="flex flex-col items-center text-white">
+                  <span>{user.name}</span>
+                  <span>{format(parseISO(user.createdAt), "dd/MM/yyyy")}</span>
+                </div>
+              </div>
               <Button>
                 <span>Details</span>
               </Button>
