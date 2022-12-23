@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import FormValid from "../../context/FormValid";
-import { Button, Input } from "../index";
+import useForm from "../../hooks/useForm";
+import { Button, Input } from "../../components/index";
 
-function Form() {
+function LoginForm() {
   const { handleSubmit, user, setUser, pwd, setPwd, togglePassword, isShown } =
-    FormValid();
+    useForm();
 
   return (
     <div className="w-[500px] m-auto">
@@ -16,7 +15,7 @@ function Form() {
             Please enter you User and your Password
           </span>
         </div>
-        <form className="flex flex-col" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
           <Input
             type="text"
             placeholder="User"
@@ -47,10 +46,8 @@ function Form() {
             />
           </div>
 
-          <Button type="submit">
-            <Link to="/users">
-              <span className="text-white">Login</span>
-            </Link>
+          <Button>
+            <span>Login</span>
           </Button>
         </form>
       </div>
@@ -58,4 +55,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default LoginForm;

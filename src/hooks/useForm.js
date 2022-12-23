@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function FormValid() {
+function useForm() {
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [isShown, setIsSHown] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (user === "vendemmia" && pwd === "123123123") {
-      toast.loading("Redirecting...");
-      redirect("/user");
+      toast.loading("Redirecting...", { duration: 1000 });
+      // redirect("/users");
+      navigate("/users");
     } else {
       toast.error("Error, check username and password");
     }
@@ -36,4 +39,4 @@ function FormValid() {
   };
 }
 
-export default FormValid;
+export default useForm;
