@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FormValid from "../../context/FormValid";
 import { Button, Input } from "../index";
 
@@ -47,7 +48,9 @@ function Form() {
           </div>
 
           <Button type="submit">
-            <span className="text-white">Login</span>
+            <Link to="/users">
+              <span className="text-white">Login</span>
+            </Link>
           </Button>
         </form>
       </div>

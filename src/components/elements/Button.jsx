@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ children, type }) => {
+function Button({ children, type }) {
   return (
     <button
       type={type}
@@ -9,4 +9,5 @@ export default ({ children, type }) => {
       {children}
     </button>
   );
-};
+}
+export default Button;

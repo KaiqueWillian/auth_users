@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ type, placeholder, value, onChange, autoComplete }) => {
+function Input({ type, placeholder, value, onChange, autoComplete }) {
   return (
     <input
       type={type}
@@ -12,4 +12,5 @@ export default ({ type, placeholder, value, onChange, autoComplete }) => {
       required
     />
   );
-};
+}
+export default Input;

@@ -1,11 +1,13 @@
 import React from "react";
-import Form from "./components/form/Form";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Users, Login } from "./pages/index";
 
 function App() {
   return (
-    <div className="h-screen  flex items-center justify-center">
-      <Form />
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/users" element={<Users />} />
+    </Routes>
   );
 }
 

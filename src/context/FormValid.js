@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { redirect } from "react-router-dom";
 
-export default () => {
+function FormValid() {
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [isShown, setIsSHown] = useState(false);
@@ -9,9 +11,10 @@ export default () => {
     e.preventDefault();
 
     if (user === "vendemmia" && pwd === "123123123") {
-      console.log("valid");
+      toast.loading("Redirecting...");
+      redirect("/user");
     } else {
-      console.log("invalid");
+      toast.error("Error, check username and password");
     }
 
     setUser("");
@@ -31,4 +34,6 @@ export default () => {
     togglePassword,
     isShown,
   };
-};
+}
+
+export default FormValid;
