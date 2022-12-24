@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "../../components/index";
 import { api } from "../../services/api";
 import { format, parseISO } from "date-fns";
+import { Link } from "react-router-dom";
 
 function ListUsers() {
   const [users, setUsers] = useState();
@@ -16,15 +17,15 @@ function ListUsers() {
 
   return (
     <>
-      <p className="text-white">
+      <p className="text-white mt-5">
         {users.length} Registered
         {setUsers.length === 2 ? " users" : " user"}
       </p>
 
-      <div className="w-[375px] m-auto">
+      <div className="w-auto m-auto">
         {users.map((user) => (
           <div
-            className="border rounded-lg mb-8 border-[#00e640] py-4 px-4"
+            className="border rounded-lg mb-8 border-[#FF2F69] py-4 px-4 mx-5"
             key={user.id}
           >
             <div className="flex flex-row items-center justify-between">
@@ -32,18 +33,21 @@ function ListUsers() {
                 <img
                   src={user.avatar}
                   alt="avatar"
-                  className="w-[66px] h-[66px] rounded-full bg-white border-[#00e640] border"
+                  className="w-[66px] h-[66px] rounded-full border-white border"
                 />
               </div>
               <div>
                 <div className="flex flex-col items-center text-white">
-                  <span>{user.name}</span>
+                  <span className="font-bold">{user.name}</span>
                   <span>{format(parseISO(user.createdAt), "dd/MM/yyyy")}</span>
                 </div>
               </div>
-              <Button>
-                <span>Details</span>
-              </Button>
+
+              <Link>
+                <Button>
+                  <span className="font-bold">Details</span>
+                </Button>
+              </Link>
             </div>
           </div>
         ))}

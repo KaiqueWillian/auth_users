@@ -7,7 +7,7 @@ function LoginForm() {
     useForm();
 
   return (
-    <div className="w-[500px] m-auto">
+    <div className="w-[500px] m-auto border-[#FF2F69] border rounded-md">
       <div className="px-16 py-20">
         <div className="flex flex-col items-center justify-center mb-10">
           <h1 className="mb-5 text-3xl font-bold text-white">Login</h1>
@@ -42,12 +42,12 @@ function LoginForm() {
               type="checkbox"
               checked={isShown}
               onChange={togglePassword}
-              className="ml-2"
+              className="ml-2 cursor-pointer"
             />
           </div>
 
           <Button>
-            <span>Login</span>
+            <span className="font-bold">Login</span>
           </Button>
         </form>
       </div>
