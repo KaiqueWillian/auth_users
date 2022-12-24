@@ -1,5 +1,5 @@
-import Login from "./login/Login";
-import Users from "./users/Users";
+import LoginForm from "./login/LoginForm";
+import ListUsers from "./users/ListUsers";
 import DetailsUser from "./users/DetailsUser";
 
-export { Login, Users, DetailsUser };
+export { LoginForm, ListUsers, DetailsUser };
