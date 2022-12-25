@@ -5,7 +5,7 @@ import { Button } from "../";
 function UserCard({ user }) {
   return (
     <div className="border rounded-lg mb-8 border-[#FF2F69] py-4 px-4 mx-5">
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex flex-row items-center justify-between gap-3">
         <div>
           <img
             src={user.avatar}

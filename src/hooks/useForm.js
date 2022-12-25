@@ -14,7 +14,6 @@ function useForm() {
 
     if (user === "vendemmia" && pwd === "123123123") {
       toast.loading("Redirecting...", { duration: 1000 });
-      // redirect("/users");
       navigate("/users");
     } else {
       toast.error("Error, check username and password");

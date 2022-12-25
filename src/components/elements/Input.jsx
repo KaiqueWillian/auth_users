@@ -9,6 +9,7 @@ function Input({ type, placeholder, value, onChange, autoComplete }) {
       className="h-12 bg-transparent  border rounded-[4px] py-4 pl-5 text-white mb-5"
       onChange={onChange}
       value={value}
+      pattern="^[a-zA-Z0-9]*$"
       required
     />
   );
