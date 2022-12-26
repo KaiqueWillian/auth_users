@@ -13,7 +13,7 @@ function LoginForm() {
           <div className="flex flex-col items-center justify-center mb-10">
             <h1 className="mb-5 text-3xl font-bold text-white">Login</h1>
             <span className="text-white">
-              Please enter you User and your Password
+              Please enter you User and Password
             </span>
           </div>
           <form className="flex flex-col gap-2" onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getUsers } from "../../services";
-import { UserCard } from "../../components";
+import { Button, UserCard } from "../../components";
+import { Link } from "react-router-dom";
 
 function ListUsers() {
   const [users, setUsers] = useState();
@@ -18,13 +19,17 @@ function ListUsers() {
   if (!users) return null;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 bg-[#422C76] top-0">
-      <p className="text-white mt-5">
-        {users.length} Registered
-        {setUsers.length === 2 ? " users" : " user"}
-      </p>
-
-      <div className="m-auto">
+    <div className="flex flex-col items-center justify-center gap-5 bg-[#422C76]">
+      <div className="m-auto flex flex-col gap-5">
+        <div className="flex flex-row items-center justify-between mt-5">
+          <Link to={"/"}>
+            <Button>Previous</Button>
+          </Link>
+          <p className="text-white">
+            {users.length}
+            {users.length > 1 ? " Users" : " User"}
+          </p>
+        </div>
         {users.map((user) => (
           <UserCard user={user} key={user.id} />
         ))}

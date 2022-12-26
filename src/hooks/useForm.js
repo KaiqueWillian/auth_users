@@ -18,9 +18,6 @@ function useForm() {
     } else {
       toast.error("Error, check username and password");
     }
-
-    setUser("");
-    setPwd("");
   };
 
   const togglePassword = () => {
